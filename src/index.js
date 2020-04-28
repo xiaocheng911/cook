@@ -3,10 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import axios from "axios"; // 引入axios
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './store'; // 引入store
+
+React.Component.prototype.$axios = axios;
+axios.interceptors.request.use(config => {
+  return config;
+})
+
+axios.interceptors.response.use(({ data }) => {
+  return data;
+})
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router><App /></Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
