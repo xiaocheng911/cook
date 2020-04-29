@@ -1,19 +1,12 @@
-
+import home from "./home";
+import Home from "../views/Home";
 export default [
     {
-        path:"/",
-        name:"cookStudy",
-    },
-    {
-        path:"/cookCircle",
-        name:"cookCircle",
-    },
-    {
-        path:"/questionAnswers",
-        name:"questionAnswers"
-    },
-    {
-        path:"/my",
-        name:"my"
+        path: "/",
+        name: "home",
+        component: Home,
+        childrens: [
+            ...home
+        ]
     }
 ]
