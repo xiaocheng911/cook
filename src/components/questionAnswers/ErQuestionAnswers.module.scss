@@ -1,0 +1,80 @@
+/* ---------------------搜索，二级导航----------------------- */
+.po{
+    background-color: #fff;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+}
+
+/* 搜索部分---------------------------- */
+#bigsearch{
+    width: 750px;
+    height: 88px;
+    /* background-color: cyan; */
+}
+.search{
+    width: 750px;
+    box-sizing: border-box;
+    padding-right:36px;
+    padding-left:36px;
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+}
+.search div:nth-of-type(1){
+    font-size: 32px;
+    color: #E98B71
+}
+.search div:nth-of-type(2){
+    font-size: 28px;
+    width: 480px;
+    height: 70px;
+    margin-top: 10px;
+    background-color: #F5F7F9;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 70px;
+    color: #4A4945;
+}
+.search span{
+    display: inline-block;
+    margin: 20px 0px 20px 0px;
+}
+.search img{
+    margin: 19px 0px 19px 0px;
+}
+i{
+    font-style: normal;
+}
+/* 搜索结束------------------------------- */
+
+/* 顶部搜索结束---------------------------- */
+/* 导航------------------------ */
+.nav{    
+    display: flex;
+    width: 750px;
+    height: 92px;
+    justify-content: space-between;
+    font-size: 28px;
+    align-items:center
+    
+}
+.active{
+    
+    div{
+        width: 100px;
+        height: 4px;
+        background-color: #E98B71;
+        margin: 0 auto;
+    }    
+}
+.smallnav{
+    width: 250px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    color: #999999;
+}
+/* 导航结束--------------------------- */
+/* ------------------------------------------------------------ */

@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './store'; // 引入store
+import "lib-flexible"  //引入px转换rem 插件
 
 React.Component.prototype.$axios = axios;
 axios.interceptors.request.use(config => {

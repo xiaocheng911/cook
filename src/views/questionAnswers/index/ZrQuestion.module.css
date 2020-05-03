@@ -1,0 +1,68 @@
+/* 主体部分-------------------------------- */
+.bigmain{
+    width: 750px;
+    overflow: auto;
+    position: absolute;
+    top:180px;
+    bottom: 100px;
+}
+main{
+    width: 690px;
+    margin: 0 auto;   
+}
+.xiaokuai{
+    width: 690px;
+    border-bottom: 1px solid #E7E2E5;
+    padding: 30px 0px 20px 0px;
+    box-sizing: border-box;
+}
+.yiceng{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:#4A4945;
+}
+.erceng{
+    display: flex;
+    background-color: rgb(245, 247, 249);
+}
+.erceng img{
+    border-radius:8px;
+}
+.sanceng{
+    display: flex;
+    line-height: 40px;
+    margin-top: 20px;
+}
+.youbian{
+    margin-left: 30px;
+    width: 520px;
+    height: 140px;
+}
+.youbian div:nth-of-type(1){
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.youbian div:nth-of-type(2){
+    font-size: 26px;
+}
+
+.sanceng>div:nth-of-type(1){
+    width: 546px;
+    height: 40px;
+    font-size: 28px;
+    color: #498DD0;
+}
+.sanceng div:nth-of-type(2){
+    display: flex;
+    width: 132px;
+    justify-content: space-between;   
+}
+.sanceng span{
+    display: inline-block;
+    line-height: 42px;
+    font-size: 28px;
+    color:#E98B71;
+}
+/* 主体结束-------------------------------- */
