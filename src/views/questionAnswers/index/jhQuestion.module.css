@@ -1,0 +1,52 @@
+/* 主体----------------------------------------- */
+.bigmain{
+    width: 750px;
+    position:absolute;
+    overflow: auto;
+    top: 180px;
+    bottom: 100px;
+}
+main{
+    width: 690px;
+    margin: 0 auto;
+}
+.xiaokuai{
+    border-bottom: 1px solid #E7E2E5;
+    padding-top: 20px;
+}
+.yiceng img{
+    width: 76px;
+    border-radius: 50%;
+}
+.yiceng{
+    display: flex;
+    line-height: 80px;
+    font-size: 26px;
+}
+.yiceng div:nth-of-type(2){
+    margin-left: 20px;
+    width: 590px;
+    height: 80px;
+}
+.erceng{
+    color: #4A4945;
+    font-size: 36px;
+    font-weight: bold;
+}
+.sanceng{
+    color: #4A4945;
+    margin-top: 10px;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 28px;
+}
+.siceng{
+    color: #999999;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+
+}
+/* 主体结束------------------------------- */

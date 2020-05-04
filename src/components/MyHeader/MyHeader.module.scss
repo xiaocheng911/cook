@@ -1,0 +1,23 @@
+.bg{
+    color:#999999;
+    display:inline-block;
+    width:25%;
+    height: 100px;
+    text-align:center;
+    text-decoration:none;
+    img{
+        width: 50px;
+        margin-top: 10px;
+    }       
+}
+.po{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: #fff;
+    z-index: 2;
+    width: 750px;
+    border-top:2px solid #eeeded;
+}
+
+
