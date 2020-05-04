@@ -2,12 +2,19 @@ import CookCircle from "../../views/cookCircle/CookCircle";
 import cookCircle from "./cookCircle";
 import QuestionAnswers from "../../views/questionAnswers/QuestionAnswers.jsx"
 import questionAnswers from "./questionAnswers"
-export default [
-    // {
-    //     path:"/",
-    //     name:"cookStudy"
+import CookStudy from "../../views/cookStudy/CookStudy";
+import cookStudy from "./cookStudy";
 
-    // },
+export default [
+    {
+        path:"/",
+        name:"cookStudy",
+        component:CookStudy,
+        exact:true,
+        childrens:[
+            ...cookStudy
+        ]
+    },
     {
         path: "/cookCircle",
         name: "cookCircle",
