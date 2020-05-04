@@ -1,0 +1,11 @@
+烘焙帮：
+/hbb
+
+学烘焙：
+    1.分类：/hbb/education/getIndexByWeb?_t=1588577321865 [1]
+    2.推荐课程：/hbb/recommend/getRandContent?_t=1588577321861&type=3&pageSize=10
+    3.技巧百科：/hbb/education/getNewbieGuide?type=5&_t=1588578083415
+    4.视频学堂：
+        4.1分类：/hbb/index/getIndexItem?_t=1588578591799&categoryId=10163
+        ...
+    
