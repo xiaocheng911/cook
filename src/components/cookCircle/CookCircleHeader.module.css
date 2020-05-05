@@ -1,0 +1,45 @@
+.bigHeader {
+    width: 750px;
+    height: 88px;
+    padding: 0 36px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: red; */
+}
+.smallHeader {
+    width: 570px;
+    height: 88px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+.nav {
+    width: 130px;
+    height: 88px;
+    /* background-color: orange; */
+    line-height: 84px;
+    color: #999;
+    text-align: center;
+    font-size: 32px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.active{
+    color: #4A4945;
+    /* color: red; */
+    font-weight: bold;
+}
+.active div {
+    width: 40px;
+    height: 4px;
+    background-color: #E98B71;
+    margin: 0 auto;
+}
