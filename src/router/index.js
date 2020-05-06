@@ -3,7 +3,7 @@ import Home from "../views/Home";
 
 //以下是无导航的组件引入
 import Add from './../views/cookStudy/index/Add';
-import Message from './../views/cookStudy/index/Message';
+import Message from './../components/common/Message';
 import Search from './../views/cookStudy/index/Search';
 import Skill from './../views/cookStudy/index/Skill';
 import Video from './../views/cookStudy/index/Video';

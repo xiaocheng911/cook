@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import GoBack from './../../../components/common/GoBack';
+import GoBack from './GoBack';
 
-import style from "../css/message.module.scss"
+import style from "../../assets/style/message.module.scss"
 // 引入图片
-import go from "../../../assets/img/cookStudy/go.jpg"
-import mes1 from "../../../assets/img/cookStudy/mes1.jpg"
-import mes2 from "../../../assets/img/cookStudy/mes2.jpg"
-import mes3 from "../../../assets/img/cookStudy/mes3.jpg"
-import mes4 from "../../../assets/img/cookStudy/mes4.jpg"
-import mes5 from "../../../assets/img/cookStudy/mes5.jpg"
+import go from "../../assets/img/cookStudy/go.jpg"
+import mes1 from "../../assets/img/cookStudy/mes1.jpg"
+import mes2 from "../../assets/img/cookStudy/mes2.jpg"
+import mes3 from "../../assets/img/cookStudy/mes3.jpg"
+import mes4 from "../../assets/img/cookStudy/mes4.jpg"
+import mes5 from "../../assets/img/cookStudy/mes5.jpg"
 
 export default class Message extends Component {
     render() {
