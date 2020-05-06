@@ -33,7 +33,9 @@ export default class Index extends Component {
                                 <i>搜索食谱/食材</i>
                             </div>
                             <div>
-                                <img width="27" src={message} alt="" />
+                                <NavLink to="/message">
+                                    <img width="27" src={message} alt="" />
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -59,9 +61,9 @@ export default class Index extends Component {
                 </div>
                 {/* 推荐部分 */}
                 <CookClass props={this.props}></CookClass>
-                
+
             </div>
         )
     }
-    
+
 }
