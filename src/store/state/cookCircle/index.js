@@ -1,3 +1,5 @@
 export default {
-    newsList:[]
+    newsList:[],
+    communityList:[],
+    contentList:[]
 }

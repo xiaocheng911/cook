@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {
-    NavLink
-} from "react-router-dom";
 import CookCircleHeader from "../../components/cookCircle/CookCircleHeader";
 import RootRouter from "../../components/common/RootRouter";
 class CookCircle extends Component {
