@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import style from "../../views/cookStudy/css/cookClass.module.scss"
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import cookStudy from "../../store/actionCreator/cookStudy"
 
-export default class CookClass extends Component {
+class CookClass extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,6 +13,7 @@ export default class CookClass extends Component {
         };
     }
     render() {
+        const {category,advise} = this.props;
         return (
             <div>
                 <div className={style.main}>
@@ -21,7 +25,7 @@ export default class CookClass extends Component {
                             <div className={style.xxx}>
                                 <div>
                                     {
-                                    this.state.advise.map(vv => (
+                                    advise.map(vv => (
                                         <section onClick={()=>{
                                             this.props.props.history.push(`/lesson/${vv.courseId}`);
                                             console.log(111,this.props)
@@ -37,7 +41,7 @@ export default class CookClass extends Component {
                         </div>
                     }
                     {
-                        this.state.category.map(v => (
+                        category.map(v => (
                             <div key={v.categoryId} className={style.cla}>
                                 <h2>
                                     {v.title}
@@ -45,7 +49,7 @@ export default class CookClass extends Component {
                                 <div className={style.xxx}>
                                     <div>
                                         {
-                                            v.item.map((vv, i) => (
+                                            v.item.map(vv => (
                                                 <section onClick={() => {
                                                     this.props.props.history.push(`/lesson/${vv.educationCourseId}`);
                                                     console.log(111, this.props)
@@ -65,21 +69,21 @@ export default class CookClass extends Component {
             </div>
         )
     }
-    async componentDidMount() {
-        console.log(111111);
-        const { data } = await this.$axios.get("/hbb/education/getIndexByWeb?_t=1588577321865");
-        data.category.splice(0, 1);
-        const category = data.category;
-        console.log(category)
-        this.setState({
-            category
-        });
-
-        const data2 = await this.$axios.get("/hbb/recommend/getRandContent?_t=1588577321861&type=3&pageSize=10")
-        const advise = data2.data.data;
-        console.log(advise);
-        this.setState({
-            advise
-        })
+    componentDidMount() {
+        this.props.getCat.call(this);
+        this.props.getAdv.call(this);
     }
 }
+
+function mapStateToProps({cookStudy}){
+    return {
+        category:cookStudy.category,
+        advise:cookStudy.advise
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators(cookStudy,dispatch);
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(CookClass)

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CookClass from '../../../components/cookStudy/CookClass'
 import style from "../css/video.module.scss"
 import search from "../../../assets/img/cookStudy/search.jpg"
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 export default class Video extends Component {
     constructor(props){
         super(props);
@@ -16,7 +16,7 @@ export default class Video extends Component {
 
         const claItem = (
             this.state.claItem.map(vv=>(
-                <div className={style.item}>
+                <div key={vv.categoryItemId} className={style.item}>
                     <section>
                         <img src={vv.verticalImages[0]} alt=""/>
                         <div>{vv.title}</div>
@@ -37,6 +37,7 @@ export default class Video extends Component {
                         {
                             this.state.cla.map(v=>(
                                 <span onClick={async ()=>{
+                                    console.log(this)
                                     this.setState({
                                         claOpen:true
                                     })
@@ -47,8 +48,6 @@ export default class Video extends Component {
                                         claItem:data
                                     });
                                 }} key={v.categoryId}>{v.title}</span>
-
-
                                 
                             ))
                         
