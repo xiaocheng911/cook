@@ -3,7 +3,11 @@ import GoBack from '../../../components/common/GoBack'
 import style from "../css/skill.module.scss"
 import app from "../../../assets/img/cookStudy/app.jpg"
 
-export default class Skill extends Component {
+import cookStudy from "../../../store/actionCreator/cookStudy";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+class Skill extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +15,7 @@ export default class Skill extends Component {
         }
     }
     render() {
+        const {guide} = this.props;
         return (
             <div>
 
@@ -20,7 +25,7 @@ export default class Skill extends Component {
                 <div className={style.skill}>
                     <ul>
                         {
-                            this.state.guide.map(v => (
+                            guide.map(v => (
                                 <li key={v.contentId}>
                                     <img src={v.image} alt="" />
                                     <span>{v.title}</span>
@@ -35,13 +40,19 @@ export default class Skill extends Component {
         )
     }
 
-    async componentDidMount() {
-        const { data } = await this.$axios.get("/hbb/education/getNewbieGuide?type=5&_t=1588664743839");
-        let arr = data.courseGuide;
-        arr.splice(6);
-        this.setState({
-            guide: arr
-        })
-
+    componentDidMount() {
+        this.props.getGuide.call(this);
     }
 }
+
+function mapStateToProps({cookStudy}){
+    return {
+        guide:cookStudy.guide
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators(cookStudy,dispatch);
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Skill)
