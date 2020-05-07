@@ -1,4 +1,5 @@
 export default {
     zxList:[],
-    jhList:[]
+    jhList:[],
+    zrList:[]
 }

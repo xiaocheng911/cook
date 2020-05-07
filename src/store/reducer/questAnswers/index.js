@@ -3,6 +3,14 @@ import questAnswersType from "../../actionType/questAnswers/index"
 export default function(state=questAnswersInit,{type,payload}){
     state = JSON.parse(JSON.stringify(state))
 
+    // 获取最热列表------------------------
+    if(type===questAnswersType.CHANGE_GET_ZR){
+        state.zrList = [
+            ...state.zrList,
+            ...payload
+        ]
+    }
+
     // 获取精华列表----------------------
     if(type===questAnswersType.CHANGE_GET_JH){
         state.jhList =[
