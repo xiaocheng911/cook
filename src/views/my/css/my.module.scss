@@ -1,27 +1,195 @@
-.big{
-    background-color: rgb(245,247,249);
-    header{
+.big {
+    background-color: rgb(245, 247, 249);
+
+    header {
         width: 100%;
         background-color: #fff;
         box-sizing: border-box;
         padding: 0 36px;
         overflow: hidden;
-        img{
+
+        img {
             width: 54px;
             height: 54px;
             margin: 20px 0;
             float: right;
         }
     }
-    .myinfo{
+
+    .myinfo {
         background-color: #fff;
-        img{
+        overflow: hidden;
+
+        .head {
             width: 156px;
             height: 156px;
+            float: left;
             border-radius: 50%;
             overflow: hidden;
             box-sizing: border-box;
-            border: 1px solid #E7E2E5;
+            border: 2px solid #E7E2E5;
+            margin: 0 30px;
         }
+
+        .headright {
+            float: left;
+
+            h1 {
+                margin: 0;
+                padding: 0;
+                color: #4A4945;
+                font-size: 40px;
+                height: 54px;
+                line-height: 54px;
+                font-weight: normal;
+
+                .sex {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 14px;
+                    vertical-align: middle;
+                }
+
+                .shield {
+                    width: 50px;
+                    height: 50px;
+                    margin-left: 14px;
+                    vertical-align: middle;
+
+                }
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 24px;
+                line-height: 32px;
+                color: #999999;
+                font-weight: normal;
+                margin: 8px 0 20px;
+
+                img {
+                    width: 46px;
+                    height: 46px;
+                    vertical-align: middle;
+                    margin-left: 144px;
+                }
+            }
+
+            h3 {
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                line-height: 28px;
+                color: #999999;
+                font-weight: normal;
+                margin: 8px 0 20px;
+
+                div {
+                    position: relative;
+                    width: 300px;
+                    height: 8px;
+                    background-color: #EEEDEB;
+                    margin: 0;
+                    margin-top: 10px;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        z-index: 1;
+                        width: 30%;
+                        height: 8px;
+                        border-radius: 10px;
+                        background-color: #1976D2;
+                    }
+                }
+            }
+        }
+    }
+
+    .data {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #fff;
+        padding: 40px 74px;
+
+        section {
+            width: 200px;
+            height: 52px;
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: center;
+            border-right: 2px solid #E7E2E5;
+            font-size: 22px;
+            color: #999999;
+
+            div {
+                font-size: 28px;
+                color: #4A4945;
+                line-height: 40px;
+            }
+        }
+
+    }
+
+    .option {
+        width: 100%;
+        padding: 20px 0;
+        background-color: #fff;
+
+        section {
+            width: 25%;
+            display: inline-block;
+            text-align: center;
+
+            img {
+                width: 80px;
+                height: 80px;
+                display: block;
+                margin: 0 54px;
+            }
+        }
+    }
+
+    ul {
+        background-color: #fff;
+        margin: 20px 0 0 0;
+        padding: 0 0 0 30px;
+        list-style: none;
+        overflow: hidden;
+
+        li {
+            height: 54px;
+            padding: 30px 0;
+            font-size: 28px;
+            color: #4A4945;
+            border-bottom: 2px solid #E7E2E5;
+            position: relative;
+            img {
+                width: 48px;
+                height: 48px;
+                vertical-align: middle;
+                margin-right: 20px;
+            }
+            .go{
+                position: absolute;
+                top: 30px;
+                right: 0;
+            }
+        }
+    }
+
+    .white{
+        width: 100%;
+        height: 100px;
+        background-color: rgb(245, 247, 249);
+    }
+
+    .noborder {
+        border: 0;
     }
 }
