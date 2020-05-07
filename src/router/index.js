@@ -3,12 +3,13 @@ import Home from "../views/Home";
 
 //以下是无导航的组件引入
 import Add from './../views/cookStudy/index/Add';
-import Message from './../views/cookStudy/index/Message';
+import Message from './../components/common/Message';
 import Search from './../views/cookStudy/index/Search';
 import Skill from './../views/cookStudy/index/Skill';
 import Video from './../views/cookStudy/index/Video';
 import Course from './../views/cookStudy/index/Course';
 import RecipeClass from './../views/cookStudy/index/RecipeClass';
+import Lesson from './../views/cookStudy/index/Lesson';
 
 export default [
     {
@@ -45,6 +46,11 @@ export default [
         path:"/recipeClass",
         name:"recipeClass",
         component:RecipeClass
+    },
+    {
+        path:"/lesson/:id",
+        name:"lesson",
+        component:Lesson
     },
     {
         path: "/",

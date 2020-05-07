@@ -1,11 +1,58 @@
 import React, { Component } from 'react'
+import GoBack from '../../../components/common/GoBack'
+import style from "../css/skill.module.scss"
+import app from "../../../assets/img/cookStudy/app.jpg"
 
-export default class Skill extends Component {
+import cookStudy from "../../../store/actionCreator/cookStudy";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+class Skill extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            guide: []
+        }
+    }
     render() {
+        const {guide} = this.props;
         return (
             <div>
-                <h1>技巧百科</h1>
+
+                {/* 返回按钮 */}
+                <GoBack props={this.props}></GoBack>
+
+                <div className={style.skill}>
+                    <ul>
+                        {
+                            guide.map(v => (
+                                <li key={v.contentId}>
+                                    <img src={v.image} alt="" />
+                                    <span>{v.title}</span>
+                                </li>
+                            ))
+                        }
+
+                    </ul>
+                </div>
+                <img className={style.app} src={app} alt=""/>
             </div>
         )
     }
+
+    componentDidMount() {
+        this.props.getGuide.call(this);
+    }
 }
+
+function mapStateToProps({cookStudy}){
+    return {
+        guide:cookStudy.guide
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators(cookStudy,dispatch);
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Skill)

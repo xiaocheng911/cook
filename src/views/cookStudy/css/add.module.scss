@@ -1,0 +1,41 @@
+.add{
+    overflow: hidden;
+    .one{
+        width: 240px;
+        height: 240px;
+        position: absolute;
+        left: 75px;
+        bottom: 280px;
+    }
+    .two{
+        width: 240px;
+        height: 240px;
+        position: absolute;
+        right: 75px;
+        bottom: 280px;
+    }
+    .s1{
+        font-size: 28px;
+        position: absolute;
+        left: 144px;
+        bottom: 240px;
+    }
+    .s2{
+        font-size: 28px;
+        position: absolute;
+        right: 144px;
+        bottom: 240px;
+    }
+    
+    .box{
+        width: 750px;
+        height: 108px;
+        text-align: center;
+        font-size: 32px;
+        line-height: 108px;
+        color: #4A4945;
+        position: absolute;
+        left: auto;
+        bottom: 80px;
+    }
+}
