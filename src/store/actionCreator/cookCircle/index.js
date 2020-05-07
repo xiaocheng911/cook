@@ -13,6 +13,7 @@ function changeCommunityList(payload) {
     }
 }
 function changeContentList(payload) {
+    // console.log("hhh",payload)
     return {
         type:cookCircleType.CHANGE_CONTENT_LIST,
         payload
@@ -38,17 +39,21 @@ export default {
             dispatch(changeCommunityList(data.data))
         }
     },
-    getContent() {
+    getContent(pageIndex=0) {
         return async (dispatch) => {
+            // console.log("pageIndex",pageIndex)
             // https://api.hongbeibang.com/v2/feed/getNew?&pageIndex=0&pageSize=10
             const {data} = await axios.get("/hbb/v2/feed/getNew",{
                 params:{
-                    pageIndex:0,
+                    pageIndex,
                     pageSize:10
                 }
             })
             console.log(data.content)
-            dispatch(changeContentList(data.content));
+            dispatch(changeContentList({
+                contentList:data.content,
+                contentPageIndex:pageIndex
+            }));
         }
     }
 }
