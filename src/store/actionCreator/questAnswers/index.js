@@ -33,10 +33,11 @@ export default {
 
             const data = await axios.get("/hbb/question/getNew",{
                 params:{
-                    pageIndex:20,
+                    pageIndex:0,
                     pageSize:5
                 }                
             })
+            console.log(data.data.content.data)
             dispatch(changeZxList(data.data.content.data))
         }
     },

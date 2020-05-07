@@ -16,15 +16,17 @@ class ZrQuestion extends Component {
                 <div className={style.bigmain}>
                     <main>
                         {this.props.zrList.map(v=>(
-                            <div className={style.xiaokuai} key={v.clientId}>
+                            <div className={style.xiaokuai} key={v.recipe.clientId}>
                                 <div className={style.yiceng}>{v.coverTitle}</div>
-                                <div className={style.erceng}>
-                                    <img width="70" src={v.recipe.image} alt="" />
-                                    <div className={style.youbian}>
-                                        <div>{v.recipe.title}</div>
-                                        <div>{v.recipe.clientName}</div>
-                                    </div>
-                                </div>
+                                {v.recipe.clientId ? (
+                                    <div className={style.erceng}>
+                                        <img width="70" height="70" src={v.recipe.image} alt="" />
+                                        <div className={style.youbian}>
+                                            <div>{v.recipe.clientName} </div>
+                                            <div>作者：{v.recipe.title}</div>
+                                        </div>
+                                    </div> 
+                                ) : ""}  
                                 <div className={style.sanceng}>
                                 {v.answerNum>0 ? <div style={{color:"#999999"}}>{v.answerNum+"个回答"}</div> : <div>暂无回答</div>}
                                     <div>
