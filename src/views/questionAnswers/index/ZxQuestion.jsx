@@ -28,7 +28,7 @@ class ZxQuestion extends Component {
                                 </div>
                             </div> 
                             <div className={style.sanceng}>
-                                <div>暂无回答</div>
+                                {v.answerNum>0 ? <div style={{color:"#999999"}}>{v.answerNum+"个回答"}</div> : <div>暂无回答</div>}
                                 <div>
                                     <div className={style.scyoubian}>
                                         <img width="19" src="https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40" alt="" />
