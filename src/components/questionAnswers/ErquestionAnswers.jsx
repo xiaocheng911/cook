@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import style from "./ErQuestionAnswers.module.scss"
 import {
-    NavLink
+    NavLink,
+    withRouter
 } from "react-router-dom"
-export default class questionAnswers extends Component {
+class questionAnswers extends Component {
+
+    componentDidMount(){
+
+        console.log(this.props)
+    }
     render() {
         return (
             <div className={style.po}>   
@@ -12,7 +18,7 @@ export default class questionAnswers extends Component {
                         <div>
                             <span>提问</span>
                         </div>
-                        <div>
+                        <div onClick={()=>this.props.history.push("/search")}>
                             <i>搜索问题</i>
                         </div>
                         <div>
@@ -38,3 +44,5 @@ export default class questionAnswers extends Component {
         )
     }
 }
+
+export default withRouter(questionAnswers)
