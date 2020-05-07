@@ -35,7 +35,10 @@ export default [
     {
         path:"/video",
         name:"video",
-        component:Video
+        component:Video,
+        childrens:[
+            
+        ]
     },
     {
         path:"/course",
