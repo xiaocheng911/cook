@@ -3,6 +3,7 @@ import style from "../../views/cookStudy/css/cookClass.module.scss"
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import cookStudy from "../../store/actionCreator/cookStudy"
+import { withRouter } from 'react-router-dom';
 
 class CookClass extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class CookClass extends Component {
                                     {
                                     advise.map(vv => (
                                         <section onClick={()=>{
-                                            this.props.props.history.push(`/lesson/${vv.courseId}`);
+                                            this.props.history.push(`/lesson/${vv.courseId}`);
                                             console.log(111,this.props)
                                         }} key={vv.courseId}>
                                             <img src={vv.coverImage} alt="" />
@@ -51,7 +52,7 @@ class CookClass extends Component {
                                         {
                                             v.item.map(vv => (
                                                 <section onClick={() => {
-                                                    this.props.props.history.push(`/lesson/${vv.educationCourseId}`);
+                                                    this.props.history.push(`/lesson/${vv.educationCourseId}`);
                                                     console.log(111, this.props)
                                                 }} key={vv.categoryItemId}>
                                                     <img src={vv.verticalImages[0]} alt="" />
@@ -86,4 +87,4 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators(cookStudy,dispatch);
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CookClass)
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(CookClass))
