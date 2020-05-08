@@ -8,7 +8,7 @@ class Newest extends Component {
         super(props);
         this.state = {
             scrollTop: 0
-        }
+        };
     }
     getContentPic(imageList) {
         if (imageList.length === 1) {
@@ -77,8 +77,8 @@ class Newest extends Component {
 
                 <div className={style.bigContent}>
                     {
-                        this.props.contentList.map(v => (
-                            <div className={style.smallContent} key={v.contentId}>
+                        this.props.contentList.map((v,key) => (
+                            <div className={style.smallContent} key={key}>
                                 <div className={style.contentHeader}>
                                     <div>
                                         <img height="38" src={v.clientImage} alt="" />
@@ -162,9 +162,10 @@ class Newest extends Component {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
         // console.log(222,document.querySelector(".Newest_bigContent__3Qcvx").clientHeight)
         let contentHeight = document.querySelector(".Newest_bigContent__3Qcvx").clientHeight;
-        console.log(contentHeight + 200 - document.documentElement.scrollTop);
+        // console.log(contentHeight + 200 - document.documentElement.scrollTop);
+
         if((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
-            this.props.getContent(this.props.contentPageIndex + 10)
+            this.props.getContent(this.props.contentIsLoading,this.props.contentPageIndex + 10);
         }
         this.setState({
             scrollTop
