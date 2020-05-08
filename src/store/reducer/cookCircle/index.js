@@ -12,14 +12,16 @@ export default function (state = cookCircleInit, { type, payload }) {
         if(payload.contentPageIndex/1 === 0) {
             state.contentList = payload.contentList
         }else {
-            console.log(111111)
+            // console.log(111111)
             state.contentList = [
                 ...state.contentList,
                 ...payload.contentList
             ]
         }
-        console.log("shshshshsh",state)
+        // console.log("shshshshsh",state)
         state.contentPageIndex = payload.contentPageIndex || 0;
+    }else if(type === cookCircleType.CHANGE_IS_LOADING) {
+        state.contentIsLoading = payload;
         console.log("yeyeye",state)
     }
     return state;

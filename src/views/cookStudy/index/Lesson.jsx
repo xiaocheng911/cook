@@ -23,9 +23,8 @@ export default class Lesson extends Component {
                     <video poster={this.state.info.image} controls
                         autoPlay>
                         <source
-                            
-                            // src={this.state.info.playURL2}
-                            src={"https://alivideo.hongbeibang.com/daxue-2019-8-24-19-40-19?auth_key=1588983136-631759914734160070-0-36732d35f86e0b29299473d0f69de302"}
+                            src={this.state.info.playURL2}
+                            // src={"https://alivideo.hongbeibang.com/daxue-2019-8-24-19-40-19?auth_key=1588983136-631759914734160070-0-36732d35f86e0b29299473d0f69de302"}
                             type="video/mp4" />
 
                     </video>

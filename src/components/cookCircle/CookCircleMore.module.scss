@@ -1,0 +1,101 @@
+.bigContentPic {
+    width: 100%;
+    margin-bottom: 22px;
+    // background-color: red;
+}
+.smallContentPic {
+    width: 706px;
+    margin-right: 22px;
+    // background-color: orange;
+}
+.contentPic1 {
+    width: 66.66%;
+    padding: 8px;
+    box-sizing: border-box;
+    img{
+        max-width: 100%;
+        max-height: 584px;
+    }
+}
+.contentPic4 {
+    width: 66.66%;
+    img{
+        width: 220px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+}
+.contentPic2 {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+.contentPicOther {
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+
+.recipe {
+    margin-bottom: 30px;
+    padding: 0 30px 0 0;
+}
+.erceng{
+    display: flex;
+    background-color: rgb(245, 247, 249);
+    overflow: hidden;
+}
+.erceng img{
+    border-radius:8px;
+}
+.youbian{
+    margin-left: 30px;
+    width: 520px;
+    height: 140px;
+}
+.youbian div:nth-of-type(1){
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.youbian div:nth-of-type(2){
+    font-size: 26px;
+    color: #999;
+}
+
+.interaction {
+    height: 60px;
+    box-sizing: border-box;
+    margin: 0 30px 0 0;
+    border-top: 2px solid;
+    border-top-color: #E7E2E5;
+    // background-color: red;
+    display: flex;
+}
+.smallInteraction {
+    width: 33.333%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border-right: 2px solid;
+    border-right-color: #E7E2E5;
+    // background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 38px;
+    }
+    span {
+        font-size: 24px;
+        color: #999999;
+        margin-left: 10px;
+    }
+}
+.smallInteraction:nth-of-type(3) {
+    border: 0;
+}
