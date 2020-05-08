@@ -10,6 +10,7 @@ import Video from './../views/cookStudy/index/Video';
 import Course from './../views/cookStudy/index/Course';
 import RecipeClass from './../views/cookStudy/index/RecipeClass';
 import Lesson from './../views/cookStudy/index/Lesson';
+import videoRouter from "./home/cookStudy/video"
 
 export default [
     {
@@ -37,7 +38,7 @@ export default [
         name:"video",
         component:Video,
         childrens:[
-            
+            ...videoRouter
         ]
     },
     {

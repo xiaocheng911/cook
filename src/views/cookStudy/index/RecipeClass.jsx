@@ -79,7 +79,7 @@ export default class RecipeClass extends Component {
                 <div className={style.cla}>
                     {/* 左侧分类 */}
                     <ul >
-                        <li onClick={()=>{
+                        <li onClick={() => {
                             this.setState({
                                 claOpen: false
                             });
@@ -108,8 +108,10 @@ export default class RecipeClass extends Component {
                 </div>
 
                 {/* 底部app */}
-                <img className={style.app} src={app2} alt="" />
-
+                <a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.hongbeibang.app">
+                    <img className={style.app} src={app2} alt="" />
+                </a>
+                
             </div>
         )
     }

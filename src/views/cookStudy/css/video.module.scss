@@ -8,7 +8,7 @@
     position: relative;
 
 
-    div {
+    .middleCla {
         margin-left: 24px;
         position: relative;
 
@@ -31,16 +31,28 @@
             margin: 0 20px;
             height: 56px;
             line-height: 76px;
+            text-align: center;
+            position: relative;
+
+            i {
+                width: 48px;
+                height: 3px;
+                border-radius: 3px;
+                background-color: #E98B71;
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0 auto;
+            }
         }
 
-        i {
-            width: 48px;
-            height: 3px;
-            border-radius: 3px;
-            background-color: #E98B71;
-            position: absolute;
-            bottom: 10px;
-            left: 26px;
+        .Aactive {
+            font-weight: bold;
+            i{
+                display: inline-block;
+            }
         }
 
     }
@@ -53,6 +65,16 @@
         position: fixed;
         right: 0;
         top: 0;
+    }
+
+
+    .Aactive {
+        font-weight: bold;
+        i{
+            display: block;
+        }
+        // font-size: 40px;
+        // color: aqua;
     }
 }
 
