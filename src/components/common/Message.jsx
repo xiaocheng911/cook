@@ -17,7 +17,7 @@ export default class Message extends Component {
                 <GoBack props={this.props}></GoBack>
                 <span>消息</span>
                 <ul>
-                    <li>
+                    <li onClick={()=>{this.props.history.push("/message/m3")}}>
                         <img src={mes1} alt="" />
                         <div>
                             <img src={go} alt=""/>
@@ -61,5 +61,8 @@ export default class Message extends Component {
                 </ul>
             </div>
         )
+    }
+    componentDidMount(){
+        console.log(this.props)
     }
 }

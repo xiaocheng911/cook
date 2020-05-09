@@ -1,33 +1,38 @@
-.add{
+.add {
+    background-color: #fff;
     overflow: hidden;
-    .one{
+
+    .one {
         width: 240px;
         height: 240px;
         position: absolute;
         left: 75px;
         bottom: 280px;
     }
-    .two{
+
+    .two {
         width: 240px;
         height: 240px;
         position: absolute;
         right: 75px;
         bottom: 280px;
     }
-    .s1{
+
+    .s1 {
         font-size: 28px;
         position: absolute;
         left: 144px;
         bottom: 240px;
     }
-    .s2{
+
+    .s2 {
         font-size: 28px;
         position: absolute;
         right: 144px;
         bottom: 240px;
     }
-    
-    .box{
+
+    .box {
         width: 750px;
         height: 108px;
         text-align: center;
