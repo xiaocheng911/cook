@@ -3,5 +3,7 @@ export default {
     communityList:[],
     contentList:[],
     contentPageIndex:0,
-    contentIsLoading:false
+    contentIsLoading:false,
+    masterList:[],
+    masterPageIndex:0
 }

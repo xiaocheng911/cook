@@ -10,5 +10,8 @@ class GuardRouter extends Component {
     }
     componentDidMount() {
     }
+    // componentWillUnmount() {
+    //     console.log("guardRouter");
+    // }
 }
 export default withRouter(GuardRouter);

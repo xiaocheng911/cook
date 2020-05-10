@@ -21,7 +21,11 @@ export default class Lesson extends Component {
                 {/* 视频部分 */}
                 <div className={style.video}>
                     <video poster={this.state.info.image} controls
-                        autoPlay>
+                        autoPlay="true"
+                        playsinline="playsinline"
+                        webkit-playsinline="webkit-playsinline"
+                        controlslist="nodownload"
+                        >
                         <source
                             src={this.state.info.playURL2}
                             // src={"https://alivideo.hongbeibang.com/daxue-2019-8-24-19-40-19?auth_key=1588983136-631759914734160070-0-36732d35f86e0b29299473d0f69de302"}
@@ -59,6 +63,12 @@ export default class Lesson extends Component {
                 </ul>
 
                 <div className={style.three}>暂略...</div>
+
+
+
+
+
+                
             </div>
         )
     }
