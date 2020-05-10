@@ -56,6 +56,7 @@ class Master extends Component {
         this.state = {
             scrollTop: 0
         };
+        this.getScrollTop = this.getScrollTop.bind(this)
     }
     render() {
         return (
@@ -145,27 +146,27 @@ class Master extends Component {
     getScrollTop() {
         if (!this.props.contentIsLoading) {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            // console.log(222,document.querySelector(".Newest_bigContent__3Qcvx").clientHeight)
-            // let contentHeight = document.querySelector(".Master_bigContent__3Qcvx").clientHeight;
-            // // console.log(contentHeight + 200 - document.documentElement.scrollTop);
-
-            // if ((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
-            //     this.props.getMasterList(this.props.masterPageIndex + 10);
-            // }
+            if (document.querySelector(".Master_bigContent__3Qcvx")) {
+                let contentHeight = document.querySelector(".Master_bigContent__3Qcvx").clientHeight;
+                if ((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
+                    this.props.getMasterList(this.props.masterPageIndex + 10);
+                }
+            }
             this.setState({
                 scrollTop
             })
+            // console.log(1111111)
         }
     }
     componentDidMount() {
         this.props.getMasterList();
-        // window.addEventListener('scroll', this.getScrollTop.bind(this), true);
-        // window.removeEventListener("scroll", this.getScrollTop.bind(this))
+        window.addEventListener('scroll', this.getScrollTop, true);
     }
     componentWillUnmount() {
-        this.setState = function() {
+        this.setState = function () {
             return false;
         }
+        window.removeEventListener("scroll", this.getScrollTop)
     }
 }
 function mapStateToProps(state) {

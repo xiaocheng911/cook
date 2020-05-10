@@ -9,7 +9,7 @@ class Newest extends Component {
         this.state = {
             scrollTop: 0
         };
-        this.getScrollTop = this.getScrollTop.bind(this)
+        this.scrollTop = this.getScrollTop.bind(this)
     }
     getContentPic(imageList) {
         if (imageList.length === 1) {
@@ -63,16 +63,16 @@ class Newest extends Component {
         this.props.getNewsList();
         this.props.getCommunity();
         this.props.getContent();
-        // document.addEventListener('scroll', this.getScrollTop, true);
+        document.addEventListener('scroll', this.scrollTop, true);
     }
     componentWillUnmount() {
         this.setState = function () {
             return false;
         }
-        // console.log("11111111")
         // console.log(window);
         // console.log()
-        document.removeEventListener("scroll", this.getScrollTop)
+        document.removeEventListener("scroll", this.scrollTop);
+
     }
     render() {
         // document.addEventListener('scroll', this.getScrollTop, true);
@@ -188,12 +188,13 @@ class Newest extends Component {
     getScrollTop() {
         if (!this.props.contentIsLoading) {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            // console.log(222,document.querySelector(".Newest_bigContent__3Qcvx").clientHeight)
-            let contentHeight = document.querySelector(".Newest_bigContent__3Qcvx").clientHeight;
-            // console.log(contentHeight + 200 - document.documentElement.scrollTop);
-            if ((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
-                this.props.getContent(this.props.contentPageIndex + 10);
+            if (document.querySelector(".Newest_bigContent__3Qcvx")) {
+                let contentHeight = document.querySelector(".Newest_bigContent__3Qcvx").clientHeight;
+                if ((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
+                    this.props.getContent(this.props.contentPageIndex + 10);
+                }
             }
+            console.log(222222)
             this.setState({
                 scrollTop
             })
