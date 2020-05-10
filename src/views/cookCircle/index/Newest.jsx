@@ -85,7 +85,7 @@ class Newest extends Component {
                             this.props.newsList.map(v => (
                                 <div className={style.pic} key={v.categoryItemId}>
                                     <img src={v.image} alt="" />
-                                    <a href={v.link}></a>
+                                    <a href={v.link}> </a>
                                 </div>
                             ))
                         }
@@ -102,7 +102,7 @@ class Newest extends Component {
                     </div>
                 </div>
 
-                <div className={style.bigContent}>
+                <div id="bigContent" className={style.bigContent}>
                     {
                         this.props.contentList.map((v, key) => (
                             <div className={style.smallContent} key={key}>
@@ -188,8 +188,8 @@ class Newest extends Component {
     getScrollTop() {
         if (!this.props.contentIsLoading) {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            if (document.querySelector(".Newest_bigContent__3Qcvx")) {
-                let contentHeight = document.querySelector(".Newest_bigContent__3Qcvx").clientHeight;
+            if (document.querySelector("#bigContent")) {
+                let contentHeight = document.querySelector("#bigContent").clientHeight;
                 if ((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
                     this.props.getContent(this.props.contentPageIndex + 10);
                 }
