@@ -4,7 +4,8 @@
 // }
 .follow {
     width: 100%;
-    height: 1512px;
+    height: 90%;
+    overflow: hidden;
     background-color: #F5F7F9;
     // margin-top: 88px;
     // text-align:center;
@@ -27,6 +28,9 @@
     overflow-y: scroll;
 }
 .noFollow {
+    position: fixed;
+    top: 100px;
+    left: 340px;
     font-size: 28px;
     line-height: 40px;
     color: #999999;
