@@ -18,7 +18,7 @@ class ZxQuestion extends Component {
             <div className={style.bigmain}>
                 <main>  
                     {this.props.questAnswers.zxList.map(v=>(
-                        <div className={style.xiaokuai} key={v.recipe.clientId}>
+                        <div className={style.xiaokuai} key={v.contentId}>
                             <div className={style.yiceng}>{v.title} </div>                            
                             <div className={style.erceng}>
                                 <img width="70" height="70" src={v.recipe.image} alt="" />
