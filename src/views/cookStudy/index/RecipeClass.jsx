@@ -70,7 +70,9 @@ export default class RecipeClass extends Component {
                     <GoBack props={this.props}></GoBack>
 
                     {/* 搜索框 */}
-                    <div className={style.ss}>
+                    <div onClick={()=>{
+                        this.props.history.push("/search");
+                    }} className={style.ss}>
                         <i>搜索食谱/食材</i>
                     </div>
                 </div>
@@ -102,9 +104,6 @@ export default class RecipeClass extends Component {
                     {/* 右侧展示 */}
                     {
                         this.state.claOpen ? claDiv : (this.state.adviseName === "" ? <div>暂无数据</div> : adviseCla)
-                    }
-                    {
-
                     }
 
                 </div>

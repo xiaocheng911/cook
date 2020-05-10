@@ -9,12 +9,12 @@ import style from "../../views/cookStudy/css/cookClass.module.scss"
 
 
 // 引入图片
-import b1 from "../../assets/img/cookStudy/b1.jpg";
-import b2 from "../../assets/img/cookStudy/b2.jpg";
-import b3 from "../../assets/img/cookStudy/b3.jpg";
-import b4 from "../../assets/img/cookStudy/b4.jpg";
-import b5 from "../../assets/img/cookStudy/b5.jpg";
-import b6 from "../../assets/img/cookStudy/b6.jpg";
+// import b1 from "../../assets/img/cookStudy/b1.jpg";
+// import b2 from "../../assets/img/cookStudy/b2.jpg";
+// import b3 from "../../assets/img/cookStudy/b3.jpg";
+// import b4 from "../../assets/img/cookStudy/b4.jpg";
+// import b5 from "../../assets/img/cookStudy/b5.jpg";
+// import b6 from "../../assets/img/cookStudy/b6.jpg";
 
 class CookClass extends Component {
     constructor(props) {
@@ -22,7 +22,6 @@ class CookClass extends Component {
         this.state = {
             category: [],
             advise: [],
-            
         };
     }
     render() {
@@ -84,6 +83,7 @@ class CookClass extends Component {
         )
     }
     componentDidMount() {
+        
         this.props.getCat.call(this);
         this.props.getAdv.call(this);
         

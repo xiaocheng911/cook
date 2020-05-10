@@ -17,7 +17,7 @@ export default class Message extends Component {
                 <GoBack props={this.props}></GoBack>
                 <span>消息</span>
                 <ul>
-                    <li onClick={()=>{this.props.history.push("/message/m3")}}>
+                    <li>
                         <img src={mes1} alt="" />
                         <div>
                             <img src={go} alt=""/>

@@ -1,23 +1,99 @@
-.bg{
-    color:#999999;
-    display:inline-block;
-    width:25%;
+.bg {
+    color: #999999;
+    display: inline-block;
+    width: 25%;
     height: 100px;
-    text-align:center;
-    text-decoration:none;
-    img{
+    text-align: center;
+    text-decoration: none;
+
+    img {
         width: 50px;
         margin-top: 10px;
-    }       
+    }
+
+    .pic1 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/FhngZoiK_s7Zw4K3DxLogRfqoO06?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+
+    .pic2 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/Fkpdn7F9EWxvNeSS8M7V4_xbRPlf?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+
+    .pic3 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/Flm_lYHJQA56h0VyhdRhQ1i5iO06?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+
+    .pic4 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/FrYeKj0MohOJQuNzUgCugg90cHCS?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+
+    
 }
-.po{
+
+.active1 {
+    .pic1 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/FsxN7RUFRJ9Zdris5Z22haR2xIhj?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+}
+
+.active2 {
+    .pic2 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/Flc4c0tB_BGGFnA-ORFowqfNOpaD?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+}
+
+.active3 {
+    .pic3 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/Fj5pW1jZYwlS9rB3h_nsvXNptuPX?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+}
+
+.active4 {
+    .pic4 {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        background: url("https://image.hongbeibang.com/FpNSY800vY0I5ytvWaqDbdJqT0HR?50X50&imageView2/1/w/50/h/50") no-repeat center center;
+        background-size: 50px 50px;
+    }
+}
+
+
+
+.po {
     position: fixed;
     bottom: 0px;
     left: 0px;
     background-color: #fff;
     z-index: 2;
     width: 750px;
-    border-top:2px solid #eeeded;
+    border-top: 2px solid #eeeded;
 }
-
-
