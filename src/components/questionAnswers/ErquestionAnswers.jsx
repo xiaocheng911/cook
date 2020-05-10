@@ -21,7 +21,7 @@ class questionAnswers extends Component {
                         <div onClick={()=>this.props.history.push("/search")}>
                             <i>搜索问题</i>
                         </div>
-                        <div>
+                        <div  onClick={()=>this.props.history.push("/message")}>
                             <img width="27" src="https://image.hongbeibang.com/FjmYGE5z6RvQL-_fdLKuSGYfmwO2?48X48&imageView2/1/w/48/h/48" alt="" />
                         </div>
                     </div>

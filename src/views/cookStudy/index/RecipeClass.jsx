@@ -19,7 +19,7 @@ export default class RecipeClass extends Component {
     render() {
 
         const claDiv = (
-            <div>
+            <div className={style.rightCla}>
                 {
                     this.state.allCla.map(v => (
                         <div key={v.classifyId}>
@@ -44,7 +44,7 @@ export default class RecipeClass extends Component {
         )
 
         const adviseCla = (
-            <div>
+            <div  className={style.rightCla}>
                 {
                     <h3>{this.state.adviseName}</h3>
                 }
@@ -79,19 +79,21 @@ export default class RecipeClass extends Component {
                 <div className={style.cla}>
                     {/* 左侧分类 */}
                     <ul >
-                        <li onClick={()=>{
+                        <li onClick={() => {
                             this.setState({
-                                claOpen: false
+                                claOpen: false,
+                                currCla:-1
                             });
-                        }} className={style.one}>推荐</li>
+                        }} className={this.state.claOpen?"":(style.one)}>推荐</li>
                         {
-                            this.state.cla.map(v => (
+                            this.state.cla.map((v,i) => (
                                 <li onClick={() => {
                                     this.setState({
                                         claOpen: true,
-                                        allCla: v.list
+                                        allCla: v.list,
+                                        currCla:i
                                     });
-                                }} key={v.classifyId}>{v.name}</li>
+                                }} key={v.classifyId}  className={this.state.currCla===i?(style.one):""}>{v.name}</li>
                             ))
                         }
 
@@ -108,8 +110,10 @@ export default class RecipeClass extends Component {
                 </div>
 
                 {/* 底部app */}
-                <img className={style.app} src={app2} alt="" />
-
+                <a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.hongbeibang.app">
+                    <img className={style.app} src={app2} alt="" />
+                </a>
+                
             </div>
         )
     }

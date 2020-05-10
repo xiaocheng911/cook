@@ -8,13 +8,21 @@ function changeNewsList(payload) {
 }
 function changeCommunityList(payload) {
     return {
-        type:cookCircleType.CHANGE_COMMUNITY_LIST,
+        type: cookCircleType.CHANGE_COMMUNITY_LIST,
         payload
     }
 }
 function changeContentList(payload) {
+    // console.log("hhh",payload)
     return {
-        type:cookCircleType.CHANGE_CONTENT_LIST,
+        type: cookCircleType.CHANGE_CONTENT_LIST,
+        payload
+    }
+}
+function changeIsLoading(payload) {
+    console.log("payload",payload)
+    return {
+        type:cookCircleType.CHANGE_IS_LOADING,
         payload
     }
 }
@@ -28,27 +36,30 @@ export default {
     getCommunity() {
         return async (dispatch) => {
             // community/getByLimit?isShow=4&pageIndex=0&pageSize=99
-            const {data} = await axios.get("/hbb/community/getByLimit",{
-                params:{
-                    isShow:4,
-                    pageIndex:0,
-                    pageSize:99
+            const { data } = await axios.get("/hbb/community/getByLimit", {
+                params: {
+                    isShow: 4,
+                    pageIndex: 0,
+                    pageSize: 99
                 }
             })
             dispatch(changeCommunityList(data.data))
         }
     },
-    getContent() {
-        return async (dispatch) => {
-            // https://api.hongbeibang.com/v2/feed/getNew?&pageIndex=0&pageSize=10
-            const {data} = await axios.get("/hbb/v2/feed/getNew",{
-                params:{
-                    pageIndex:0,
-                    pageSize:10
+    getContent(isLoading = false, pageIndex = 0) {
+        return isLoading ? {} : async (dispatch) => {
+            dispatch(changeIsLoading(true));
+            const { data } = await axios.get("/hbb/v2/feed/getNew", {
+                params: {
+                    pageIndex,
+                    pageSize: 10
                 }
             })
-            console.log(data.content)
-            dispatch(changeContentList(data.content));
+            dispatch(changeContentList({
+                contentList: data.content,
+                contentPageIndex: pageIndex
+            }));
+            dispatch(changeIsLoading(false));
         }
     }
 }

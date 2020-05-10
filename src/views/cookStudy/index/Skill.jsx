@@ -15,10 +15,9 @@ class Skill extends Component {
         }
     }
     render() {
-        const {guide} = this.props;
+        const { guide } = this.props;
         return (
             <div>
-
                 {/* 返回按钮 */}
                 <GoBack props={this.props}></GoBack>
 
@@ -35,7 +34,10 @@ class Skill extends Component {
 
                     </ul>
                 </div>
-                <img className={style.app} src={app} alt=""/>
+                <a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.hongbeibang.app">
+                    <img className={style.app} src={app} alt="" />
+                </a>
+
             </div>
         )
     }
@@ -45,14 +47,14 @@ class Skill extends Component {
     }
 }
 
-function mapStateToProps({cookStudy}){
+function mapStateToProps({ cookStudy }) {
     return {
-        guide:cookStudy.guide
+        guide: cookStudy.guide
     }
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators(cookStudy,dispatch);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(cookStudy, dispatch);
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Skill)
+export default connect(mapStateToProps, mapDispatchToProps)(Skill)

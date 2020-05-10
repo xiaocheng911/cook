@@ -11,12 +11,7 @@ import recipeClass from "../../assets/img/cookStudy/recipeClass.jpg"
 import CookClass from '../../components/cookStudy/CookClass';
 
 export default class Index extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         category: []
-    //     };
-    // }
+    
     render() {
         return (
             <div>
@@ -30,7 +25,9 @@ export default class Index extends Component {
                                 </NavLink>
                             </div>
                             <div>
-                                <i>搜索食谱/食材</i>
+                                <NavLink to="/search">
+                                    <i>搜索食谱/食材</i>
+                                </NavLink>
                             </div>
                             <div>
                                 <NavLink to="/message">

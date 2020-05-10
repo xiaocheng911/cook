@@ -10,7 +10,8 @@ import Video from './../views/cookStudy/index/Video';
 import Course from './../views/cookStudy/index/Course';
 import RecipeClass from './../views/cookStudy/index/RecipeClass';
 import Lesson from './../views/cookStudy/index/Lesson';
-
+import videoRouter from "./home/cookStudy/video";
+import messageRouter from "./home/cookStudy/message";
 export default [
     {
         path:"/add",
@@ -20,7 +21,10 @@ export default [
     {
         path:"/message",
         name:"message",
-        component:Message
+        component:Message,
+        childrens:[
+            ...messageRouter
+        ]
     },
     {
         path:"/search",
@@ -35,7 +39,10 @@ export default [
     {
         path:"/video",
         name:"video",
-        component:Video
+        component:Video,
+        childrens:[
+            ...videoRouter
+        ]
     },
     {
         path:"/course",

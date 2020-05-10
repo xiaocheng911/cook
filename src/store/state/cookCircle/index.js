@@ -1,5 +1,7 @@
 export default {
     newsList:[],
     communityList:[],
-    contentList:[]
+    contentList:[],
+    contentPageIndex:0,
+    contentIsLoading:false
 }

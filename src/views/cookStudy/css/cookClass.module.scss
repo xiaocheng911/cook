@@ -1,5 +1,6 @@
 .main {
     width: 100%;
+    background-color: #fff;
     color: #4A4945;
     font-weight: bold;
     font-size: 15px;
@@ -8,7 +9,9 @@
 
     .cla {
         width: 750px;
+        background-color: #fff;
 
+        
         h2 {
             font-size: 34px;
             padding: 25px 0 10px 15px;
@@ -30,6 +33,7 @@
                     margin: 0 0 0 15px;
                     display: inline-block;
                     position: relative;
+
                     img {
                         width: 320px;
                         height: 450px;
@@ -61,8 +65,8 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
-                        -webkit-line-clamp:2; 
-                        -webkit-box-orient:vertical;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
                     }
                 }
             }

@@ -94,32 +94,34 @@
 }
 .smallContent {
     width: 750px;
-    height: 804px;
     margin-top: 20px;
     background-color: #fff;
     padding-left: 30px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .contentHeader {
     width: 100%;
     height: 88px;
     margin: 20px 0;
-    background-color: red;
+    // background-color: red;
+    overflow: hidden;
     display: flex;
+    align-items: center;
     div:nth-of-type(1) {
         width: 80px;
         height: 80px;
         overflow: hidden;
-        border-radius: 50%;
         margin-right: 20px;
-        border-color: #E7E2E5;
         img {
             width: 76px;
+            border-radius: 50%;
+            border: 2px solid #E7E2E5;
         }
     }
-    div:nth-last-of-type() {
+    div:nth-of-type(2) {
         height: 88px;
-        background-color: orange;
+        // background-color: orange;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -131,9 +133,164 @@
             text-align: left;
             color: #4A4945;
             letter-spacing: 1px;
+            display: flex;
+            img {
+                width: 80px;
+                height: 80px;
+                margin-right: 20px;
+                display: inline-block;
+                margin-top: -20px;
+            }
         }
         h4 {
             margin: 0;
+            line-height: 40px;
+            span {
+                font-size: 24px;
+                color: #999;
+                text-align: left;
+                margin-right: 20px;
+                letter-spacing: 1px;
+                font-weight: 500;
+            }
         }
     }
+}
+
+.words {
+    width: 100%;
+    margin: 0 30px 22px 0;
+    // background-color: red;
+    font-size: 28px;
+    color: #4A4945;
+    line-height: 40px;
+    max-height: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: inline-block; 
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    letter-spacing: 1px;
+    list-style-type: none;
+    overflow-wrap:break-word;
+    span:nth-of-type(1) {
+        color: #498DD0;
+    }
+}
+
+.bigContentPic {
+    width: 100%;
+    margin-bottom: 22px;
+    // background-color: red;
+}
+.smallContentPic {
+    width: 706px;
+    margin-right: 22px;
+    // background-color: orange;
+}
+.contentPic1 {
+    width: 66.66%;
+    padding: 8px;
+    box-sizing: border-box;
+    img{
+        max-width: 100%;
+        max-height: 584px;
+    }
+}
+.contentPic4 {
+    width: 66.66%;
+    img{
+        width: 220px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+}
+.contentPic2 {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+.contentPicOther {
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+
+.recipe {
+    margin-bottom: 30px;
+    padding: 0 30px 0 0;
+}
+.erceng{
+    display: flex;
+    background-color: rgb(245, 247, 249);
+    overflow: hidden;
+}
+.erceng img{
+    border-radius:8px;
+}
+.youbian{
+    margin-left: 30px;
+    width: 520px;
+    height: 140px;
+}
+.youbian div:nth-of-type(1){
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.youbian div:nth-of-type(2){
+    font-size: 26px;
+    color: #999;
+}
+
+.interaction {
+    height: 60px;
+    box-sizing: border-box;
+    margin: 0 30px 0 0;
+    border-top: 2px solid;
+    border-top-color: #E7E2E5;
+    // background-color: red;
+    display: flex;
+}
+.smallInteraction {
+    width: 33.333%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border-right: 2px solid;
+    border-right-color: #E7E2E5;
+    // background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 38px;
+    }
+    span {
+        font-size: 24px;
+        color: #999999;
+        margin-left: 10px;
+    }
+}
+.smallInteraction:nth-of-type(3) {
+    border: 0;
+}
+
+.toTop {
+    display: inline-block;
+    position: fixed;
+    bottom: 200px;
+    right: 10px;
+    overflow: hidden;
+    img {
+        width: 80px;
+    }
+}
+.text {
+    height: 10000px;
 }

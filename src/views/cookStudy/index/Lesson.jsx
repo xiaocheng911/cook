@@ -8,10 +8,10 @@ import men from "../../../assets/img/cookStudy/men.jpg"
 import onSmall from "../../../assets/img/cookStudy/v_on_small.jpg"
 
 export default class Lesson extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            info:{}
+            info: {}
         }
     }
     render() {
@@ -20,11 +20,11 @@ export default class Lesson extends Component {
 
                 {/* 视频部分 */}
                 <div className={style.video}>
-                    <video poster={this.state.info.playURL} controls
-                        autoPlay={true} >
+                    <video poster={this.state.info.image} controls
+                        autoPlay>
                         <source
-                            // src={this.state.info.playURL2}
-                            src={"https://alivideo.hongbeibang.com/daxue-2019-3-29-16-6-44-courseId_10481-h264?auth_key=1588777607-6986345644078477031-0-7db0e00eaa1477852b8101d0f7ee2bce"}
+                            src={this.state.info.playURL2}
+                            // src={"https://alivideo.hongbeibang.com/daxue-2019-8-24-19-40-19?auth_key=1588983136-631759914734160070-0-36732d35f86e0b29299473d0f69de302"}
                             type="video/mp4" />
 
                     </video>
@@ -57,21 +57,21 @@ export default class Lesson extends Component {
                     <li> <i></i> <span>图片下载</span></li>
                     <li> <i></i> <span>工具材料参考</span></li>
                 </ul>
-            
+
                 <div className={style.three}>暂略...</div>
             </div>
         )
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         console.log(this.props.match.params.id);
         //                                      /education/getCourse?_t=1588687642825&educationCourseId=10481
-        const {data} = await this.$axios.get(`/hbb/education/getCourse?_t=1588688352996&educationCourseId=${this.props.match.params.id}`);
+        const { data } = await this.$axios.get(`/hbb/education/getCourse?_t=1588688352996&educationCourseId=${this.props.match.params.id}`);
         console.log(data);
         console.log(this.state.info)
         this.setState({
-            info:data
-        },()=>{
+            info: data
+        }, () => {
             console.log(this.state.info.playURL2)
         })
 
