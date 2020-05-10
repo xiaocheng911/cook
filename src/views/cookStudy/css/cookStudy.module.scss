@@ -61,7 +61,7 @@ i {
     width: 100%;
     height: 172px;
     margin-top: 92px;
-
+    background-color: #fff;
     a {
         width: 25%;
         height: 132px;
@@ -94,9 +94,10 @@ i {
     font-size: 15px;
     overflow: hidden;
     margin-bottom: 100px;
-
+    background-color: #fff;
     .cla {
         width: 750px;
+        background-color: #fff;
 
         h2 {
             font-size: 34px;
@@ -111,6 +112,7 @@ i {
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;
+            background-color: #fff;
 
             div {
                 section {
@@ -119,6 +121,8 @@ i {
                     margin: 0 0 0 15px;
                     display: inline-block;
                     position: relative;
+                    background-color: #fff;
+
                     img {
                         width: 320px;
                         height: 450px;

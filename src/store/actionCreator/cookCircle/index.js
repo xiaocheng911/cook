@@ -20,9 +20,15 @@ function changeContentList(payload) {
     }
 }
 function changeIsLoading(payload) {
-    console.log("payload",payload)
+    // console.log("payload",payload)
     return {
         type:cookCircleType.CHANGE_IS_LOADING,
+        payload
+    }
+}
+function changeMasterList(payload) {
+    return {
+        type:cookCircleType.CHANGE_MASTER_LIST,
         payload
     }
 }
@@ -46,18 +52,37 @@ export default {
             dispatch(changeCommunityList(data.data))
         }
     },
-    getContent(isLoading = false, pageIndex = 0) {
-        return isLoading ? {} : async (dispatch) => {
+    getContent(pageIndex = 0) {
+        return async (dispatch) => {
             dispatch(changeIsLoading(true));
             const { data } = await axios.get("/hbb/v2/feed/getNew", {
                 params: {
                     pageIndex,
-                    pageSize: 10
+                    pageSize: 10,
+                    _t:Date.now()
                 }
             })
             dispatch(changeContentList({
                 contentList: data.content,
                 contentPageIndex: pageIndex
+            }));
+            dispatch(changeIsLoading(false));
+        }
+    },
+    getMasterList(pageIndex = 0) {
+        return async (dispatch) => {
+            dispatch(changeIsLoading(true));
+            // https://api.hongbeibang.com/v2/feed/getMasterNew?pageIndex=0&pageSize=10
+            const { data } = await axios.get("/hbb/v2/feed/getMasterNew", {
+                params: {
+                    pageIndex,
+                    pageSize: 10,
+                    _t:Date.now()
+                }
+            })
+            dispatch(changeMasterList({
+                masterList: data.content,
+                masterPageIndex: pageIndex
             }));
             dispatch(changeIsLoading(false));
         }

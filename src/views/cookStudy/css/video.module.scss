@@ -5,7 +5,11 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
 
 
     .middleCla {
@@ -61,10 +65,11 @@
         width: 38px;
         height: 38px;
         background-color: #fff;
-        padding: 22px;
+        padding: 22px 22px 42px 22px;
         position: fixed;
         right: 0;
         top: 0;
+
     }
 
 

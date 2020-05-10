@@ -9,12 +9,15 @@ class Newest extends Component {
         this.state = {
             scrollTop: 0
         };
+        this.scrollTop = this.getScrollTop.bind(this)
     }
     getContentPic(imageList) {
         if (imageList.length === 1) {
             return (
                 <div className={style.contentPic1}>
-                    <img src={imageList} alt="" />
+                    <a target="_blank" rel="noopener noreferrer" href={imageList}>
+                        <img src={imageList} alt="" />
+                    </a>
                 </div>
             )
         } else if (imageList.length === 4) {
@@ -22,7 +25,9 @@ class Newest extends Component {
                 <div className={style.contentPic4}>
                     {
                         imageList.map((v, key) => (
-                            <img src={v + "&imageView2/1/w/375/h/375"} key={key} alt="" />
+                            <a target="_blank" rel="noopener noreferrer" key={key} href={v + "&imageView2/1/w/375/h/375"}>
+                                <img src={v + "&imageView2/1/w/375/h/375"} alt="" />
+                            </a>
                         ))
                     }
                 </div>
@@ -32,7 +37,9 @@ class Newest extends Component {
                 <>
                     {
                         imageList.map((v, key) => (
-                            <img className={style.contentPic2} src={v + "&imageView2/1/w/375/h/375"} key={key} alt="" />
+                            <a target="_blank" rel="noopener noreferrer" key={key} href={v + "&imageView2/1/w/375/h/375"}>
+                                <img className={style.contentPic2} src={v + "&imageView2/1/w/375/h/375"} alt="" />
+                            </a>
                         ))
                     }
                 </>
@@ -42,14 +49,33 @@ class Newest extends Component {
                 <>
                     {
                         imageList.map((v, key) => (
-                            <img className={style.contentPicOther} src={v + "&imageView2/1/w/250/h/250"} key={key} alt="" />
+                            <a target="_blank" rel="noopener noreferrer" key={key} href={v + "&imageView2/1/w/250/h/250"}>
+                                <img className={style.contentPicOther} src={v + "&imageView2/1/w/250/h/250"} alt="" />
+                            </a>
                         ))
                     }
                 </>
             )
         }
     }
+
+    componentDidMount() {
+        this.props.getNewsList();
+        this.props.getCommunity();
+        this.props.getContent();
+        document.addEventListener('scroll', this.scrollTop, true);
+    }
+    componentWillUnmount() {
+        this.setState = function () {
+            return false;
+        }
+        // console.log(window);
+        // console.log()
+        document.removeEventListener("scroll", this.scrollTop);
+
+    }
     render() {
+        // document.addEventListener('scroll', this.getScrollTop, true);
         // console.log(111,document.documentElement.scrollTop)
         return (
             <div>
@@ -59,6 +85,7 @@ class Newest extends Component {
                             this.props.newsList.map(v => (
                                 <div className={style.pic} key={v.categoryItemId}>
                                     <img src={v.image} alt="" />
+                                    <a href={v.link}></a>
                                 </div>
                             ))
                         }
@@ -77,7 +104,7 @@ class Newest extends Component {
 
                 <div className={style.bigContent}>
                     {
-                        this.props.contentList.map((v,key) => (
+                        this.props.contentList.map((v, key) => (
                             <div className={style.smallContent} key={key}>
                                 <div className={style.contentHeader}>
                                     <div>
@@ -146,7 +173,7 @@ class Newest extends Component {
                     }
                 </div>
                 {
-                    
+
                     this.state.scrollTop > 500 ? (
                         <div className={style.toTop} onClick={() => {
                             document.documentElement.scrollTop = 0;
@@ -159,23 +186,19 @@ class Newest extends Component {
         )
     }
     getScrollTop() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-        // console.log(222,document.querySelector(".Newest_bigContent__3Qcvx").clientHeight)
-        let contentHeight = document.querySelector(".Newest_bigContent__3Qcvx").clientHeight;
-        // console.log(contentHeight + 200 - document.documentElement.scrollTop);
-
-        if((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
-            this.props.getContent(this.props.contentIsLoading,this.props.contentPageIndex + 10);
+        if (!this.props.contentIsLoading) {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            if (document.querySelector(".Newest_bigContent__3Qcvx")) {
+                let contentHeight = document.querySelector(".Newest_bigContent__3Qcvx").clientHeight;
+                if ((contentHeight + 200 - document.documentElement.scrollTop) <= 667.7) {
+                    this.props.getContent(this.props.contentPageIndex + 10);
+                }
+            }
+            console.log(222222)
+            this.setState({
+                scrollTop
+            })
         }
-        this.setState({
-            scrollTop
-        })
-    }
-    componentDidMount() {
-        this.props.getNewsList();
-        this.props.getCommunity();
-        this.props.getContent();
-        window.addEventListener('scroll', this.getScrollTop.bind(this), true);
     }
 }
 function mapStateToProps(state) {

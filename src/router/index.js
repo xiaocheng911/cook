@@ -66,6 +66,5 @@ export default [
         childrens: [
             ...home
         ]
-    },
-    
+    }
 ]
