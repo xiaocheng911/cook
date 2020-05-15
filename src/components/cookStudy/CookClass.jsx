@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import cookStudy from "../../store/actionCreator/cookStudy"
 import { withRouter } from 'react-router-dom';
+import Loading from "../common/Loading"
 
 // 引入样式
 import style from "../../views/cookStudy/css/cookClass.module.scss"
@@ -22,11 +23,14 @@ class CookClass extends Component {
         this.state = {
             category: [],
             advise: [],
+            isLoading:true
         };
     }
     render() {
         const { category, advise } = this.props;
-        return (
+
+        const xuanran =(
+            
             <div>
                 <div className={style.main}>
                     {
@@ -81,6 +85,9 @@ class CookClass extends Component {
                 </div>
             </div>
         )
+
+        return this.state.isLoading ?  <Loading></Loading> : xuanran
+
     }
     componentDidMount() {
         

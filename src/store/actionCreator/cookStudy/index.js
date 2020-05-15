@@ -34,6 +34,9 @@ export default {
             data.category.splice(0, 1);
             const category = data.category;
             dispatch(upCat(category))
+            this.setState({
+                isLoading:false
+            })
         }
     },
 
@@ -44,7 +47,9 @@ export default {
             const data2 = await this.$axios.get("/hbb/recommend/getRandContent?_t=1588577321861&type=3&pageSize=10")
             const advise = data2.data.data;
             dispatch(upAdv(advise));
-
+            this.setState({
+                isLoading:false
+            })
         }
     },
 

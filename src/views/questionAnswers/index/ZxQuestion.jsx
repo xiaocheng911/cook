@@ -3,18 +3,28 @@ import style from "./ZrQuestion.module.css"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
 import questAnswersCreator from "../../../store/actionCreator/questAnswers/index"
+import img from "../../../assets/img/loading.gif"
+import Loading from "../../../components/common/Loading"
 class ZxQuestion extends Component {
-
-
-    componentDidMount(){
-        if(this.props.questAnswers.zxList){
-            if(this.props.questAnswers.zxList.length<1)
-                this.props.getZxList()
+    constructor(){
+        super()
+        this.state ={
+            isloading:true
         }
+    }
+    componentDidMount(){   
+        this.setState({
+            isloading:true
+        },function(){
+           
+            this.props.getZxList(this)        
+         
+        })
+            
     }
 
     render() {
-        return (
+        const xuanran = (
             <div className={style.bigmain}>
                 <main>  
                     {this.props.questAnswers.zxList.map(v=>(
@@ -41,6 +51,7 @@ class ZxQuestion extends Component {
                 </main>
             </div>         
         )
+        return   this.state.isloading ? <img  className={style.image} src={img}></img> : xuanran 
     }
 }
 function mapStateToProps(state){

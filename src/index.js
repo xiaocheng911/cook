@@ -11,14 +11,22 @@ import { Provider } from 'react-redux';
 import store from './store'; // 引入store
 import "lib-flexible"  //引入px转换rem 插件
 // import 'antd-mobile/dist/antd-mobile.css';
+let isLoading = true
 React.Component.prototype.$axios = axios;
+
 axios.interceptors.request.use(config => {
+  isLoading  = true
   return config;
 })
 
 axios.interceptors.response.use(({ data }) => {
+  console.log(111111)
+  isLoading  = false 
   return data;
 })
+React.Component.prototype.isLoading = isLoading
+
+
 
 
 ReactDOM.render(

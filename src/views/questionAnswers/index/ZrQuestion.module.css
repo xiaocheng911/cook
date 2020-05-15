@@ -1,4 +1,11 @@
 /* 主体部分-------------------------------- */
+
+.image{
+    margin-top: 180px;
+    width: 750px;
+    height: 1100px;
+}
+
 .bigmain{
     width: 750px;
     overflow: auto;
