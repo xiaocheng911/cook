@@ -83,6 +83,18 @@
     }
 }
 
+// 轮播图隐藏
+.show{
+    margin-top: 100px;
+    height: 380px;
+    display: block;
+}
+.hide{
+    margin-top: 100px;
+    height: 380px;
+    display: none;
+}
+
 // 分类展示
 .item {
     width: 690px;
