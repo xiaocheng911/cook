@@ -20,11 +20,16 @@ export default function(state=questAnswersInit,{type,payload}){
     }
     
     // 获取最新列表--------------------
-    if(type===questAnswersType.CHANGE_GET_ZX){
-        state.zxList = [
-            ...state.zxList,
-            ...payload
-        ] 
+    if(type===questAnswersType.CHANGE_GET_ZX){   
+
+        if(payload[0].collectNum===1){
+            state.zxList = payload
+        }else{
+            state.zxList = [
+                ...state.zxList,
+                ...payload
+            ] 
+        }          
     }    
     return state
 }

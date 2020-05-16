@@ -3,11 +3,13 @@ import style from "../css/Newest.module.scss";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import cookCircleCreactor from "../../../store/actionCreator/cookCircle";
+import img from "../../../assets/img/loading.gif"
 class Newest extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrollTop: 0
+            scrollTop: 0,
+            isLoading:true
         };
         this.scrollTop = this.getScrollTop.bind(this)
     }
@@ -60,7 +62,7 @@ class Newest extends Component {
     }
 
     componentDidMount() {
-        this.props.getNewsList();
+        this.props.getNewsList(this);
         this.props.getCommunity();
         this.props.getContent();
         document.addEventListener('scroll', this.scrollTop, true);
@@ -77,7 +79,7 @@ class Newest extends Component {
     render() {
         // document.addEventListener('scroll', this.getScrollTop, true);
         // console.log(111,document.documentElement.scrollTop)
-        return (
+        const xuanran = (
             <div>
                 <div className={style.bigNews}>
                     <div className={style.smallNews}>
@@ -184,6 +186,7 @@ class Newest extends Component {
                 }
             </div>
         )
+        return this.state.isLoading ? <img src={img} className={style.image}></img> : xuanran
     }
     getScrollTop() {
         if (!this.props.contentIsLoading) {

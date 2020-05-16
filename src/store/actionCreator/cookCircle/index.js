@@ -33,10 +33,13 @@ function changeMasterList(payload) {
     }
 }
 export default {
-    getNewsList() {
+    getNewsList(_this) {
         return async (dispatch) => {
             const { data } = await axios.get("/hbb/feed/getCategory")
             dispatch(changeNewsList(data.category[0].item))
+            _this.setState({
+                isLoading:false
+            })
         }
     },
     getCommunity() {

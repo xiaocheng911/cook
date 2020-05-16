@@ -27,10 +27,10 @@ function changeZrList(payload){
 export default {
 
     // 获取最新列表------------------------------
-    getZxList(){
+    getZxList(_this){
         // https://api.hongbeibang.com/question/getNew?pageIndex=0&pageSize=10
         return async (dispatch)=>{
-
+           
             const data = await axios.get("/hbb/question/getNew",{
                 params:{
                     pageIndex:0,
@@ -39,6 +39,10 @@ export default {
             })
             console.log(data.data.content.data)
             dispatch(changeZxList(data.data.content.data))
+            _this.setState({
+                isloading:false
+            })
+          
         }
     },
 
