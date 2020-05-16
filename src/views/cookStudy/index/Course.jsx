@@ -7,10 +7,18 @@ import men from "../../../assets/img/cookStudy/men.jpg"
 import onSmall from "../../../assets/img/cookStudy/v_on_small.jpg"
 import go from "../../../assets/img/cookStudy/go.jpg"
 import x from "../../../assets/img/cookStudy/x.jpg";
-import loading from "../../../assets/img/loading.gif";
+// import loading from "../../../assets/img/loading.gif";
 import ccc from "../../../assets/img/cookStudy/course1.jpg"
 import more from "../../../assets/img/cookStudy/moreLesson.jpg"
 import qqq from "../../../assets/img/cookStudy/qqqq.jpg"
+
+// 引入插件
+import { Toast } from 'antd-mobile';
+import 'antd-mobile/lib/toast/style/css';
+function offline() {
+    Toast.offline('功能还在开发中...', 2);
+}
+
 export default class Lesson extends Component {
     constructor(props) {
         super(props);
@@ -128,15 +136,17 @@ export default class Lesson extends Component {
                 }
                 {/* 底部 */}
                 <div className={style.bottom}>
-                    <span>
+                    <span onClick={() => {
+                        this.props.history.push(`/video`);
+                    }}>
                         <img src={more} alt="" />
                         <div>更多课程</div>
                     </span>
-                    <span>
+                    <span onClick={offline}>
                         <img src={qqq} alt="" />
                         <div>咨询</div>
                     </span>
-                    <b>￥29 购买专栏</b>
+                    <b onClick={offline}>￥29 购买专栏</b>
                 </div>
             </div>
 
