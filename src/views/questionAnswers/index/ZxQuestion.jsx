@@ -8,16 +8,18 @@ import Loading from "../../../components/common/Loading"
 class ZxQuestion extends Component {
     constructor(){
         super()
+        this.pageIndex=1
         this.state ={
             isloading:true
         }
+
     }
     componentDidMount(){   
         this.setState({
             isloading:true
         },function(){
            
-            this.props.getZxList(this)        
+            this.props.getZxList.call(this)        
          
         })
             
@@ -49,6 +51,7 @@ class ZxQuestion extends Component {
                         </div>
                     ))}                                                                     
                 </main>
+                <button className={style.button} onClick={()=>this.props.getZxList.call(this,this.pageIndex+10)}>加载更多</button>
             </div>         
         )
         return   this.state.isloading ? <img  className={style.image} src={img}></img> : xuanran 
