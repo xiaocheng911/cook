@@ -10,6 +10,8 @@ import onSmall from "../../../assets/img/cookStudy/v_on_small.jpg"
 import go from "../../../assets/img/cookStudy/go.jpg"
 import x from "../../../assets/img/cookStudy/x.jpg";
 import loading from "../../../assets/img/loading.gif"
+import more from "../../../assets/img/cookStudy/moreLesson.jpg"
+import qqq from "../../../assets/img/cookStudy/qqqq.jpg"
 
 export default class Lesson extends Component {
     constructor(props) {
@@ -18,7 +20,8 @@ export default class Lesson extends Component {
             info: {},
             introduces: [],
             str: "",
-            serOpen: false
+            serOpen: false,
+            re: /<[^<>]+>/ig
         }
     }
     render() {
@@ -67,85 +70,97 @@ export default class Lesson extends Component {
             </dl>
         )
         return (
-            this.state.info === {} ? 
-            <img className={style.loading} src={loading} alt="" /> :
-            (
-                <div className={style.big}>
+            this.state.info === {} ?
+                <img className={style.loading} src={loading} alt="" /> :
+                (
+                    <div className={style.big}>
 
-                    {/* 视频部分 */}
-                    <div className={style.video}>
-                        {
-                            this.state.str === "" ? <div></div> : (
-                                <video poster={this.state.info.image} controls
-                                    autoPlay>
-                                    <source
-                                        src={this.state.info.playURL2}
-                                        type="video/mp4" />
-                                </video>
-                            )
-                        }
+                        {/* 视频部分 */}
+                        <div className={style.video}>
+                            {
+                                this.state.str === "" ? <div></div> : (
+                                    <video poster={this.state.info.image} controls
+                                        autoPlay>
+                                        <source
+                                            src={this.state.info.playURL2}
+                                            type="video/mp4" />
+                                    </video>
+                                )
+                            }
 
-                        <div>
-                            <h1>
-                                {this.state.info.shareTitle}
-                            </h1>
-                            <h2>
-                                <img src={men} alt="" />
-                                <span>{this.state.info.buyNum}</span>
+                            <div>
+                                <h1>
+                                    {this.state.info.shareTitle}
+                                </h1>
+                                <h2>
+                                    <img src={men} alt="" />
+                                    <span>{this.state.info.buyNum}</span>
                                 人在学
                                 <b>
-                                    <img src={onSmall} alt="" />
+                                        <img src={onSmall} alt="" />
                                     试看课程
                                 </b>
-                            </h2>
+                                </h2>
+
+                            </div>
 
                         </div>
 
-                    </div>
+                        {/* 服务部分 */}
+                        <ul onClick={() => {
+                            this.setState({
+                                serOpen: true
+                            })
+                        }}>
+                            <li> <i></i> <span>永久回看</span></li>
+                            <li> <i></i> <span>报名即学</span></li>
+                            <li> <i></i> <span>自营课程</span></li>
+                            <li> <i></i> <span>高效学习体验</span></li>
+                            <li> <i></i> <span>分步骤学</span></li>
+                            <li> <i></i> <span>唯一品类</span></li>
+                            <li> <i></i> <span>图片下载</span></li>
+                            <li> <i></i> <span>工具材料参考</span></li>
+                            <img src={go} alt="" />
+                        </ul>
 
-                    {/* 服务部分 */}
-                    <ul onClick={() => {
-                        this.setState({
-                            serOpen: true
-                        })
-                    }}>
-                        <li> <i></i> <span>永久回看</span></li>
-                        <li> <i></i> <span>报名即学</span></li>
-                        <li> <i></i> <span>自营课程</span></li>
-                        <li> <i></i> <span>高效学习体验</span></li>
-                        <li> <i></i> <span>分步骤学</span></li>
-                        <li> <i></i> <span>唯一品类</span></li>
-                        <li> <i></i> <span>图片下载</span></li>
-                        <li> <i></i> <span>工具材料参考</span></li>
-                        <img src={go} alt="" />
-                    </ul>
-
-                    {/* 服务详情部分 */}
-                    {
-                        this.state.serOpen ? dl : ""
-                    }
-
-                    <div className={style.three}>
+                        {/* 服务详情部分 */}
                         {
-                            this.state.info === {} ? "" : this.state.introduces.map(v => (
-                                <div key={v.educationCourseSummaryExtendId}>
-                                    <h2>{v.title}</h2>
-                                    <div>
-                                        {/* {v.introduce} */}
-                                    </div>
+                            this.state.serOpen ? dl :
+                                <div className={style.three}>
+                                    {
+                                        this.state.info === {} ? "" : this.state.introduces.map(v => (
+                                            <div key={v.educationCourseSummaryExtendId}>
+                                                <h2>{v.title}</h2>
+                                                <div>
+                                                    {
+                                                        v.introduce.replace(this.state.re, '')
+                                                    }
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
-                            ))
                         }
-
+                        {/* 底部 */}
+                        <div className={style.bottom}>
+                            <span onClick={()=>{
+                                this.props.history.push(`/video`);
+                            }}>
+                                <img src={more} alt="" />
+                                <div>更多课程</div>
+                            </span>
+                            <span>
+                                <img src={qqq} alt="" />
+                                <div>咨询</div>
+                            </span>
+                            <b>￥29 购买专栏</b>
+                        </div>
                     </div>
-                </div>
-            )
+                )
         )
 
 
     }
-
-
 
     async componentDidMount() {
         console.log(this.props.match.params.id);
