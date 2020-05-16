@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import cookCircleCreactor from "../../../store/actionCreator/cookCircle";
 import img from "../../../assets/img/loading.gif"
+import Loading from './../../../components/common/Loading';
 class Newest extends Component {
     constructor(props) {
         super(props);
@@ -186,7 +187,7 @@ class Newest extends Component {
                 }
             </div>
         )
-        return this.state.isLoading ? <img src={img} className={style.image}></img> : xuanran
+        return this.state.isLoading ? <Loading/> : xuanran
     }
     getScrollTop() {
         if (!this.props.contentIsLoading) {

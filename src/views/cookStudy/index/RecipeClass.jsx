@@ -5,6 +5,13 @@ import style from "../css/recipeClass.module.scss"
 // 引入图片
 import app2 from "../../../assets/img/cookStudy/app2.jpg"
 
+// 引入插件
+import { Toast } from 'antd-mobile';
+import 'antd-mobile/lib/toast/style/css';   
+function offline() {
+    Toast.offline('搜索功能还在开发中...', 2);
+}
+
 export default class RecipeClass extends Component {
     constructor(props) {
         super(props);
@@ -25,10 +32,9 @@ export default class RecipeClass extends Component {
                         <div key={v.classifyId}>
                             <h3>{v.name}</h3>
                             <ol>
-
                                 {
                                     v.list.map(vv => (
-                                        <li key={vv.classifyId}>
+                                        <li onClick={offline} key={vv.classifyId}>
                                             <img src={vv.image} alt="" />
                                             <div>{vv.name}</div>
                                         </li>
@@ -52,7 +58,7 @@ export default class RecipeClass extends Component {
 
                     {
                         this.state.adviseCla.map(vv => (
-                            <li key={vv.classifyId}>
+                            <li onClick={offline} key={vv.classifyId}>
                                 <img src={vv.image} alt="" />
                                 <div>{vv.name}</div>
                             </li>

@@ -19,11 +19,17 @@ import my4 from "../../assets/img/my/my4.jpg";
 import my5 from "../../assets/img/my/my5.jpg";
 import my6 from "../../assets/img/my/my6.jpg";
 import my7 from "../../assets/img/my/my7.jpg";
+// 引入插件
+import { Toast } from 'antd-mobile';
+import 'antd-mobile/lib/toast/style/css';   
+function offline() {
+    Toast.offline('小窝功能还在开发中...', 2);
+}
 
 export default class My extends Component {
     render() {
         return (
-            <div className={style.big}>
+            <div onClick={offline} className={style.big}>
 
                 {/* 头部 */}
                 <header>

@@ -51,9 +51,10 @@ class ZxQuestion extends Component {
                 </main>
             </div>         
         )
-        return   this.state.isloading ? <img  className={style.image} src={img}></img> : xuanran 
+        return   this.state.isloading ? <Loading/> : xuanran 
     }
 }
+//<img  className={style.image} src={img} alt="">
 function mapStateToProps(state){
     return state
 }

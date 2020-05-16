@@ -13,6 +13,13 @@ import loading from "../../../assets/img/loading.gif"
 import more from "../../../assets/img/cookStudy/moreLesson.jpg"
 import qqq from "../../../assets/img/cookStudy/qqqq.jpg"
 
+// 引入插件
+import { Toast } from 'antd-mobile';
+import 'antd-mobile/lib/toast/style/css';   
+function offline() {
+    Toast.offline('功能还在开发中...', 2);
+}
+
 export default class Lesson extends Component {
     constructor(props) {
         super(props);
@@ -149,16 +156,15 @@ export default class Lesson extends Component {
                                 <img src={more} alt="" />
                                 <div>更多课程</div>
                             </span>
-                            <span>
+                            <span onClick={offline}>
                                 <img src={qqq} alt="" />
                                 <div>咨询</div>
                             </span>
-                            <b>￥29 购买专栏</b>
+                            <b  onClick={offline}>￥{this.state.info.price} 购买本课程</b>
                         </div>
                     </div>
                 )
         )
-
 
     }
 
