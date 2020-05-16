@@ -10,6 +10,13 @@ import mes3 from "../../assets/img/cookStudy/mes3.jpg"
 import mes4 from "../../assets/img/cookStudy/mes4.jpg"
 import mes5 from "../../assets/img/cookStudy/mes5.jpg"
 
+// 引入插件
+import { Toast } from 'antd-mobile';
+import 'antd-mobile/lib/toast/style/css';   
+function offline() {
+    Toast.offline('消息功能还在开发中...', 2);
+}
+
 export default class Message extends Component {
     render() {
         return (
@@ -17,7 +24,7 @@ export default class Message extends Component {
                 <GoBack props={this.props}></GoBack>
                 <span>消息</span>
                 <ul>
-                    <li>
+                    <li onClick={offline}>
                         <img src={mes1} alt="" />
                         <div>
                             <img src={go} alt=""/>
@@ -25,7 +32,7 @@ export default class Message extends Component {
                             <h2>回复帮友评论能获得更高人气</h2>
                         </div>
                     </li>
-                    <li>
+                    <li onClick={offline}>
                         <img src={mes2} alt="" />
                         <div>
                             <img src={go} alt=""/>
@@ -33,7 +40,7 @@ export default class Message extends Component {
                             <h2>来自你的作品、食谱</h2>
                         </div>
                     </li>
-                    <li>
+                    <li onClick={offline}>
                         <img src={mes3} alt="" />
                         <div>
                             <img src={go} alt=""/>
@@ -41,7 +48,7 @@ export default class Message extends Component {
                             <h2>有人【打赏/答谢】了你，快看看吧</h2>
                         </div>
                     </li>
-                    <li>
+                    <li onClick={offline}>
                         <img src={mes4} alt="" />
                         <div>
                             <img src={go} alt=""/>
@@ -50,7 +57,7 @@ export default class Message extends Component {
                         </div>
 
                     </li>
-                    <li>
+                    <li onClick={offline}>
                         <img src={mes5} alt="" />
                         <div>
                             <img src={go} alt=""/>

@@ -24,7 +24,8 @@ export default class Video extends Component {
             claItem: [],
             data: ['1', '2', '3', '4', '5', '6'],
             imgHeight: 176,
-            imgList: [b1, b2, b3, b4, b5, b6]
+            imgList: [b1, b2, b3, b4, b5, b6],
+            hrefList:['http://39.100.148.185/lesson/10455','http://39.100.148.185/lesson/10483','http://39.100.148.185/lesson/10589','http://39.100.148.185/lesson/10485','http://39.100.148.185/lesson/10515','http://39.100.148.185/lesson/10491']
         }
     }
     render() {
@@ -68,7 +69,7 @@ export default class Video extends Component {
                     {this.state.data.map((val, i) => (
                         <a
                             key={val}
-                            href='http://localhost:3000/lesson/10589'
+                            href={this.state.hrefList[i]}
                             style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                         >
                             <img

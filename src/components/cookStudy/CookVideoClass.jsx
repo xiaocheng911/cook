@@ -15,7 +15,9 @@ export default class CookVideoClass extends Component {
                 {
                     this.state.claItem.map(vv => (
                         <div key={vv.categoryItemId} className={style.item}>
-                            <section>
+                            <section onClick={()=>{
+                                this.props.history.push(`/lesson/${vv.educationCourseId}`);
+                            }}>
                                 <img src={vv.verticalImages[0]} alt="" />
                                 <div>{vv.title}</div>
                             </section>

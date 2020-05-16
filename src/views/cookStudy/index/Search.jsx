@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import GoBack from './../../../components/common/GoBack';
 import style from "../css/search.module.scss"
 import axios from "axios"
+
+// 引入插件
+import { Toast } from 'antd-mobile';
+import 'antd-mobile/lib/toast/style/css';   
+function offline() {
+    Toast.offline('搜索功能还在开发中...', 2);
+}
+
 export default class Search extends Component {
 
     constructor(){
@@ -24,13 +32,13 @@ export default class Search extends Component {
                 <div className={style.header}>                    
                     <GoBack props={this.props}></GoBack>                    
                     <div><input type="text" placeholder="搜索食谱/食材，烘焙/家常菜一应俱全"/></div>                    
-                    <span>搜索</span>                    
+                    <span onClick={offline}>搜索</span>                    
                 </div>
                 <div className={style.rmsearch}>热门搜索</div> 
                 
                 <div className={style.content}>
                 {this.state.searchList.map(v=>(
-                    <section key={v.popularSearchId}>{v.keyword}</section>
+                    <section onClick={offline} key={v.popularSearchId}>{v.keyword}</section>
                 ))}                    
                 </div>               
             </div>

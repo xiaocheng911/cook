@@ -54,9 +54,10 @@ class ZxQuestion extends Component {
                 <button className={style.button} onClick={()=>this.props.getZxList.call(this,this.pageIndex+10)}>加载更多</button>
             </div>         
         )
-        return   this.state.isloading ? <img  className={style.image} src={img}></img> : xuanran 
+        return   this.state.isloading ? <Loading/> : xuanran 
     }
 }
+//<img  className={style.image} src={img} alt="">
 function mapStateToProps(state){
     return state
 }
